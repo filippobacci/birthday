@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buon Compleanno Federica!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Pacifico&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  padding: 1.5rem 1rem;
+  position: relative;
+  background: #0d2b0d;
+}
+.bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
+.bg svg { width: 100%; height: 100%; }
+
+.card {
+  background: rgba(255,253,247,0.95);
+  max-width: 580px; width: 100%;
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+  border: 2.5px solid rgba(255,255,255,0.35);
+  position: relative; z-index: 2;
+}
+.card-header {
+  background: rgba(27,80,27,0.95);
+  padding: 2rem 2rem 1.5rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.confetti { position: absolute; inset: 0; pointer-events: none; }
+.confetti span { position: absolute; font-size: 20px; animation: cf 3s ease-in-out infinite alternate; }
+.confetti span:nth-child(1){left:5%;top:10%;animation-delay:0s}
+.confetti span:nth-child(2){left:85%;top:5%;animation-delay:.4s}
+.confetti span:nth-child(3){left:18%;top:58%;animation-delay:.8s}
+.confetti span:nth-child(4){left:74%;top:55%;animation-delay:.2s}
+.confetti span:nth-child(5){left:50%;top:72%;animation-delay:1s}
+.confetti span:nth-child(6){left:91%;top:35%;animation-delay:.6s}
+@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:.6}100%{transform:translateY(8px) rotate(15deg);opacity:1}}
+.bday-icon{font-size:2.6rem;display:block;margin-bottom:.3rem;animation:bop 1s ease infinite alternate}
+@keyframes bop{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+.hdr-title{font-family:'Pacifico',cursive;font-size:2.3rem;color:#fff;text-shadow:2px 3px 0 rgba(0,0,0,.3);line-height:1.1;margin-bottom:.4rem}
+.hdr-sub{font-size:.9rem;color:#a5d6a7}
+
+.card-body{padding:1.8rem 1.6rem 1.4rem}
+.bubble{background:#f1f8e9;border:1.5px solid #c8e6c9;border-radius:16px;padding:1.1rem 1.3rem;margin-bottom:1.5rem;font-size:.95rem;color:#33691e;line-height:1.75;text-align:center}
+.bubble .arr{display:block;margin-top:.5rem;font-size:1.2rem;animation:pt .8s ease infinite alternate}
+@keyframes pt{from{transform:translateY(0)}to{transform:translateY(4px)}}
+.pick-lbl{font-size:.75rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#558b2f;text-align:center;margin-bottom:.9rem}
+
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:1.3rem}
+.pcard{background:#fff;border:2.5px solid #e0e0e0;border-radius:18px;padding:.7rem .5rem .9rem;text-align:center;cursor:pointer;transition:all .22s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden}
+.pcard:hover{border-color:#66bb6a;transform:translateY(-5px) scale(1.03);box-shadow:0 10px 24px rgba(76,175,80,.2)}
+.pcard.sel{border-color:#2e7d32;background:#f1f8e9;transform:translateY(-5px) scale(1.04);box-shadow:0 12px 28px rgba(46,125,50,.28)}
+.pcard.sel .chk{opacity:1;transform:scale(1)}
+.chk{position:absolute;top:6px;right:8px;background:#2e7d32;color:#fff;width:20px;height:20px;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:900;opacity:0;transform:scale(0);transition:all .2s cubic-bezier(.34,1.56,.64,1)}
+.plant-svg{width:100%;height:100px;margin-bottom:.6rem;display:block}
+.pname{font-size:.8rem;font-weight:900;color:#2e7d32;display:block;margin-bottom:.2rem}
+.pvibe{font-size:.67rem;color:#81c784;font-weight:700;font-style:italic}
+
+.czone{text-align:center;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.hint{font-size:.78rem;color:#aaa;font-style:italic}
+.cbtn{display:none;background:#2e7d32;color:#fff;border:none;padding:.7rem 1.8rem;font-family:'Nunito',sans-serif;font-weight:900;font-size:.88rem;cursor:pointer;border-radius:50px;transition:all .2s;box-shadow:0 4px 12px rgba(46,125,50,.3)}
+.cbtn:hover{background:#1b5e20;transform:scale(1.04)}
+.ty{display:none;background:#e8f5e9;border:2px solid #a5d6a7;border-radius:16px;padding:1rem 1.2rem;font-size:.93rem;color:#2e7d32;line-height:1.7;text-align:center;margin-top:.2rem;animation:pop .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.footer{background:rgba(27,80,27,.92);border-top:1.5px solid rgba(165,214,167,.25);padding:.85rem 1.6rem;text-align:center;font-size:.85rem;color:#c8e6c9;font-weight:700}
+</style>
+</head>
+<body>
+
+<div class="bg">
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="700" fill="#0a1f0a"/>
+  <circle cx="900" cy="80" r="55" fill="#c8e6b0" opacity=".12"/>
+  <circle cx="900" cy="80" r="35" fill="#ddf0c8" opacity=".18"/>
+  <circle cx="100" cy="60" r="1.5" fill="#fff" opacity=".6"/>
+  <circle cx="200" cy="40" r="1" fill="#fff" opacity=".5"/>
+  <circle cx="350" cy="25" r="1.5" fill="#fff" opacity=".7"/>
+  <circle cx="500" cy="50" r="1" fill="#fff" opacity=".4"/>
+  <circle cx="650" cy="30" r="1.5" fill="#fff" opacity=".6"/>
+  <circle cx="750" cy="55" r="1" fill="#fff" opacity=".5"/>
+  <circle cx="1050" cy="45" r="1.5" fill="#fff" opacity=".6"/>
+  <circle cx="1150" cy="70" r="1" fill="#fff" opacity=".4"/>
+  <rect x="0" y="580" width="1200" height="120" fill="#071407"/>
+  <ellipse cx="600" cy="620" rx="700" ry="60" fill="#0d2b0d"/>
+  <ellipse cx="600" cy="600" rx="900" ry="40" fill="#1a4a1a" opacity=".5"/>
+  <g opacity=".4" fill="#071f07">
+    <polygon points="60,480 90,320 120,480"/>
+    <polygon points="140,490 175,310 210,490"/>
+    <polygon points="230,475 260,330 290,475"/>
+    <polygon points="320,485 355,300 390,485"/>
+    <polygon points="430,470 465,325 500,470"/>
+    <polygon points="550,480 585,305 620,480"/>
+    <polygon points="670,475 705,315 740,475"/>
+    <polygon points="790,480 825,295 860,480"/>
+    <polygon points="920,470 955,320 990,470"/>
+    <polygon points="1050,485 1085,300 1120,485"/>
+  </g>
+  <g opacity=".65" fill="#0d300d">
+    <polygon points="0,560 50,370 100,560"/>
+    <polygon points="80,555 140,355 200,555"/>
+    <polygon points="180,558 245,340 310,558"/>
+    <polygon points="300,552 370,345 440,552"/>
+    <polygon points="420,558 495,335 570,558"/>
+    <polygon points="540,550 620,340 700,550"/>
+    <polygon points="670,555 745,330 820,555"/>
+    <polygon points="790,552 870,345 950,552"/>
+    <polygon points="920,555 1000,340 1080,555"/>
+    <polygon points="1050,558 1125,355 1200,558"/>
+  </g>
+  <g fill="#071c07">
+    <rect x="55" y="480" width="22" height="220" fill="#040e04"/>
+    <polygon points="20,500 66,220 112,500"/>
+    <polygon points="35,560 66,350 97,560"/>
+    <rect x="1123" y="480" width="22" height="220" fill="#040e04"/>
+    <polygon points="1088,500 1134,220 1180,500"/>
+    <polygon points="1103,560 1134,350 1165,560"/>
+    <rect x="255" y="500" width="18" height="200" fill="#040e04"/>
+    <polygon points="224,520 264,280 304,520"/>
+    <polygon points="238,570 264,390 290,570"/>
+    <rect x="927" y="500" width="18" height="200" fill="#040e04"/>
+    <polygon points="896,520 936,280 976,520"/>
+    <polygon points="910,570 936,390 962,570"/>
+  </g>
+  <ellipse cx="150" cy="595" rx="90" ry="28" fill="#091a09" opacity=".9"/>
+  <ellipse cx="400" cy="600" rx="110" ry="25" fill="#091a09" opacity=".8"/>
+  <ellipse cx="750" cy="598" rx="95" ry="27" fill="#091a09" opacity=".9"/>
+  <ellipse cx="1050" cy="596" rx="100" ry="26" fill="#091a09" opacity=".8"/>
+  <polygon points="520,0 680,0 750,700 450,700" fill="#fff" opacity=".025"/>
+  <ellipse cx="300" cy="640" rx="350" ry="30" fill="#1e5c1e" opacity=".2"/>
+  <ellipse cx="900" cy="640" rx="350" ry="30" fill="#1e5c1e" opacity=".2"/>
+</svg>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="confetti">
+      <span>🎉</span><span>🌟</span><span>🎈</span><span>✨</span><span>🌿</span><span>🎊</span>
+    </div>
+    <span class="bday-icon">🎂</span>
+    <div class="hdr-title">Buon compleanno<br>Federica!</div>
+    <div class="hdr-sub">ecco un regalo per te — e stavolta non è una borsetta! 👜</div>
+  </div>
+
+  <div class="card-body">
+    <div class="bubble">
+      Niente profumo od orecchini. 🙅<br>
+      Quest'anno arriva una pianta (da curare) compresa di vaso —<br>
+      sperando viva bene in balcone 🌿<br>
+      Scegli tu quale vuoi, l'andiamo a prendere!
+      <span class="arr">👇</span>
+    </div>
+
+    <div class="pick-lbl">🌿 cosa ti piace di più? 🌿</div>
+
+    <div class="grid">
+
+      <!-- ACERO -->
+      <div class="pcard" onclick="sel(this,'acero')">
+        <div class="chk">✓</div>
+        <svg class="plant-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="42,90 78,90 74,100 46,100" fill="#8B5E3C"/>
+          <rect x="40" y="82" width="40" height="10" rx="2" fill="#a0714a"/>
+          <rect x="57" y="48" width="6" height="36" fill="#6b4226" rx="2"/>
+          <line x1="60" y1="55" x2="38" y2="38" stroke="#6b4226" stroke-width="3" stroke-linecap="round"/>
+          <line x1="60" y1="55" x2="82" y2="38" stroke="#6b4226" stroke-width="3" stroke-linecap="round"/>
+          <line x1="60" y1="62" x2="30" y2="52" stroke="#6b4226" stroke-width="2" stroke-linecap="round"/>
+          <line x1="60" y1="62" x2="90" y2="52" stroke="#6b4226" stroke-width="2" stroke-linecap="round"/>
+          <g fill="#c0392b" opacity=".9">
+            <polygon points="60,5 63,14 72,14 65,20 68,29 60,23 52,29 55,20 48,14 57,14" transform="translate(0,0) scale(0.9)"/>
+          </g>
+          <g fill="#e74c3c" opacity=".85">
+            <polygon points="60,5 63,14 72,14 65,20 68,29 60,23 52,29 55,20 48,14 57,14" transform="translate(-18,10) scale(0.75)"/>
+          </g>
+          <g fill="#d35400" opacity=".8">
+            <polygon points="60,5 63,14 72,14 65,20 68,29 60,23 52,29 55,20 48,14 57,14" transform="translate(20,8) scale(0.75)"/>
+          </g>
+          <g fill="#e67e22" opacity=".75">
+            <polygon points="60,5 63,14 72,14 65,20 68,29 60,23 52,29 55,20 48,14 57,14" transform="translate(-30,22) scale(0.65)"/>
+          </g>
+          <g fill="#c0392b" opacity=".7">
+            <polygon points="60,5 63,14 72,14 65,20 68,29 60,23 52,29 55,20 48,14 57,14" transform="translate(32,20) scale(0.65)"/>
+          </g>
+          <ellipse cx="25" cy="70" rx="5" ry="3" fill="#e74c3c" opacity=".6" transform="rotate(-30 25 70)"/>
+          <ellipse cx="95" cy="65" rx="4" ry="2.5" fill="#d35400" opacity=".5" transform="rotate(20 95 65)"/>
+        </svg>
+        <span class="pname">🍁 Acerino</span>
+        <span class="pvibe">fiamme d'autunno!</span>
+      </div>
+
+      <!-- MELOGRANO -->
+      <div class="pcard" onclick="sel(this,'melograno')">
+        <div class="chk">✓</div>
+        <svg class="plant-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="42,90 78,90 74,100 46,100" fill="#8B5E3C"/>
+          <rect x="40" y="82" width="40" height="10" rx="2" fill="#a0714a"/>
+          <rect x="57" y="50" width="6" height="34" fill="#5d4037" rx="2"/>
+          <line x1="60" y1="58" x2="35" y2="42" stroke="#5d4037" stroke-width="3" stroke-linecap="round"/>
+          <line x1="60" y1="58" x2="85" y2="42" stroke="#5d4037" stroke-width="3" stroke-linecap="round"/>
+          <line x1="60" y1="65" x2="28" y2="56" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+          <line x1="60" y1="65" x2="92" y2="56" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="60" cy="30" rx="18" ry="14" fill="#388e3c" opacity=".9"/>
+          <ellipse cx="38" cy="40" rx="14" ry="10" fill="#43a047" opacity=".85"/>
+          <ellipse cx="82" cy="40" rx="14" ry="10" fill="#43a047" opacity=".85"/>
+          <ellipse cx="28" cy="54" rx="10" ry="7" fill="#388e3c" opacity=".75"/>
+          <ellipse cx="92" cy="54" rx="10" ry="7" fill="#388e3c" opacity=".75"/>
+          <circle cx="60" cy="28" r="10" fill="#c0392b"/>
+          <circle cx="60" cy="28" r="10" fill="none" stroke="#962d22" stroke-width="1"/>
+          <polygon points="56,18 57,22 60,19 63,22 64,18 65,23 60,21 55,23" fill="#7b241c"/>
+          <circle cx="35" cy="38" r="4" fill="#e74c3c"/>
+          <circle cx="85" cy="38" r="4" fill="#e74c3c"/>
+          <circle cx="35" cy="34" r="2.5" fill="#f39c12"/>
+          <circle cx="31" cy="40" r="2.5" fill="#f39c12"/>
+          <circle cx="39" cy="40" r="2.5" fill="#f39c12"/>
+          <circle cx="85" cy="34" r="2.5" fill="#f39c12"/>
+          <circle cx="81" cy="40" r="2.5" fill="#f39c12"/>
+          <circle cx="89" cy="40" r="2.5" fill="#f39c12"/>
+        </svg>
+        <span class="pname">🌺 Melograno</span>
+        <span class="pvibe">fiori + frutti wow</span>
+      </div>
+
+      <!-- NOCCIOLO CONTORTO -->
+      <div class="pcard" onclick="sel(this,'nocciolo')">
+        <div class="chk">✓</div>
+        <svg class="plant-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="42,90 78,90 74,100 46,100" fill="#8B5E3C"/>
+          <rect x="40" y="82" width="40" height="10" rx="2" fill="#a0714a"/>
+          <path d="M60,82 C55,72 65,62 58,52 C51,42 65,32 55,22" stroke="#5d4037" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M58,52 C48,46 35,50 25,42" stroke="#6d4c41" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M58,62 C70,55 85,58 95,48" stroke="#6d4c41" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M55,38 C45,30 30,35 20,28" stroke="#6d4c41" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M56,30 C66,22 78,28 90,20" stroke="#6d4c41" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M55,22 C50,14 40,18 32,10" stroke="#6d4c41" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M55,22 C60,14 72,16 80,8" stroke="#6d4c41" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="22" cy="40" rx="3" ry="8" fill="#a5d6a7" opacity=".8" transform="rotate(-20 22 40)"/>
+          <ellipse cx="18" cy="27" rx="2.5" ry="7" fill="#81c784" opacity=".8" transform="rotate(-15 18 27)"/>
+          <ellipse cx="92" cy="47" rx="3" ry="8" fill="#a5d6a7" opacity=".8" transform="rotate(15 92 47)"/>
+          <ellipse cx="92" cy="18" rx="2.5" ry="7" fill="#81c784" opacity=".8" transform="rotate(10 92 18)"/>
+          <ellipse cx="30" cy="9" rx="2.5" ry="7" fill="#a5d6a7" opacity=".8" transform="rotate(-25 30 9)"/>
+          <ellipse cx="82" cy="7" rx="2.5" ry="6" fill="#81c784" opacity=".8" transform="rotate(20 82 7)"/>
+        </svg>
+        <span class="pname">🌀 Nocciolo Contorto</span>
+        <span class="pvibe">rami da scultura!</span>
+      </div>
+
+    </div>
+
+    <div class="czone">
+      <span class="hint" id="hint">toccane una per sceglierla 👆</span>
+      <button class="cbtn" id="cbtn" onclick="confirm_()">Questa! Confermo 🌱</button>
+    </div>
+    <div class="ty" id="ty"></div>
+  </div>
+
+  <div class="footer">🌱 Il Pono giardiniero che ti vuole bene! 🌱</div>
+</div>
+
+<script>
+let chosen = null;
+const msgs = {
+  acero: "🍁 <strong>Acerino</strong> scelto! In autunno diventa una fiammata di rosso e arancio che fa invidia a tutti i vicini. L'andiamo a prendere subito! 🎉",
+  melograno: "🌺 <strong>Melograno</strong> scelto! Fiori rossi in estate e frutti da far invidia in autunno. Praticamente si regala da sola ogni anno. L'andiamo a prendere subito! 🎉",
+  nocciolo: "🌀 <strong>Nocciolo Contorto</strong> scelto — sapevo che avresti scelto la più strana! 😄 Rami contorti e scultorei che in inverno sembrano arte moderna. L'andiamo a prendere subito! 🎉"
+};
+function sel(el, name) {
+  document.querySelectorAll('.pcard').forEach(c => c.classList.remove('sel'));
+  el.classList.add('sel');
+  chosen = name;
+  document.getElementById('hint').style.display = 'none';
+  document.getElementById('cbtn').style.display = 'block';
+}
+function confirm_() {
+  if (!chosen) return;
+  document.querySelectorAll('.pcard').forEach(c => {
+    c.style.pointerEvents = 'none';
+    if (!c.classList.contains('sel')) { c.style.opacity = '.35'; c.style.transform = 'scale(.95)'; }
+  });
+  document.getElementById('cbtn').style.display = 'none';
+  const ty = document.getElementById('ty');
+  ty.innerHTML = msgs[chosen];
+  ty.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
